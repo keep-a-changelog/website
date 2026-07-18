@@ -93,7 +93,7 @@ A short upgrade note can sit in the entry itself, such as "rename the `color` op
 
 ### Structuring a release {#releasing}
 
-Keep an `Unreleased` section at the top to collect upcoming changes. It shows readers what to expect, and at release time you move its contents into a new version. Starting on a project that has no changelog? Begin here, recording notable changes from now on. Reconstructing past releases from your version history is also worthwhile if you want a fuller record; either is fine.
+Keep an `Unreleased` section at the top to collect changes you have not yet slated for a release. It shows readers what to expect, and at release time you move its contents into a new version. Starting on a project that has no changelog? Begin here, recording notable changes from now on. Reconstructing past releases from your version history is also worthwhile if you want a fuller record; either is fine.
 
 A version starts with its number and date, for example `## [1.0.0] - 2017-07-17`. Use the `YYYY-MM-DD` format. It orders from the largest unit to the smallest, avoids the confusion of regional date formats, and is an [ISO standard][iso-8601].
 
@@ -108,6 +108,8 @@ The square brackets around `[1.0.0]` make it a Markdown reference link. Resolve 
 `[Unreleased]` compares the latest tag to `HEAD` (the current state of your code), so it always shows what has accrued since the last release, and the oldest version links to its tag, since there is nothing earlier to compare it with. Now every version is tied to its tag and links to the exact diff of what changed: the same association a hosted release page makes for you, kept in a file you own instead of a host's database. Any host exposes tag and comparison URLs, so the pattern works wherever your code lives, and the link stays out of the heading, so the changelog still reads cleanly.
 
 When you cut a release, rename `Unreleased` to the new version in both the heading and its link, then add a fresh, empty `Unreleased` section pointing at `HEAD`.
+
+You can also announce a release before it ships. When changes are slated for a planned version, it is fine to gather them under a dated heading ahead of time, using the date you plan to release. Telling readers what is coming, and when, is part of communicating change. If the date slips, correct it when the release actually ships. `Unreleased` remains the place for changes not yet slated for any release.
 
 A version may open with a short summary before the typed sections: a sentence or two on the theme of the release or a notable change. This is optional. Use it when a release is worth introducing, and skip it otherwise.
 
